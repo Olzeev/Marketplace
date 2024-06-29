@@ -3,6 +3,21 @@
     --header-element-height: 40px;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+}
+.screen{
+    width: 100%;
+    height: 110vh;
+    position: absolute;
+    left: 0;
+    top: calc(0px - var(--header-height));
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 101;
+    transition: 0.3s;
+}
 .content{
     position: relative;
     top: var(--header-height);
@@ -123,6 +138,7 @@ header.scroll {
             position: relative;
             font-size: 15pt;
             bottom: 8px;
+
             font-family: 'Open Sans', sans-serif;
         }
     }
@@ -148,12 +164,14 @@ header.scroll {
     border-radius: 10px;
     transition: 0.2s;
     user-select: none;
-
+    text-decoration: none;
     p{
         text-align: center;
         position: relative;
         font-size: 15pt;
         bottom: 8px;
+        color: black;
+
         font-family: 'Open Sans', sans-serif;
     }
 }
@@ -206,3 +224,92 @@ header.scroll {
         background-color: red;
     }
 }
+
+.login-window{
+    width: 25%;
+    min-width: 400px;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    background-color: white;
+
+    visibility: hidden;
+    left: calc(0px - max(400px, 25%));
+    top: 0px;
+    z-index: 103;
+    transition: 0.3s;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+
+    img{
+        position: relative;
+        width: 120%;
+        left: -13%;
+        filter: brightness(3);
+    }
+    h1{
+
+        position: relative;
+        margin-top: -100px;
+        font-weight: 900;
+        font-size: 5vh;
+        left: 20px;
+    }
+    input{
+        min-width: 300px;
+        width: 80%;
+        height: 50px;
+        border: 2px solid rgb(200, 200, 200);
+        border-radius: 10px;
+        margin-top: 20px;
+        left: 20px;
+        position: relative;
+        font-size: 15pt;
+
+        padding-left: 10px;
+    }
+    button{
+        background-color: #FF4545;
+        width: 30%;
+        min-width: 120px;
+        height: 50px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        font-size: 15pt;
+        position: relative;
+        left: 20px;
+        margin-top: 20px;
+        color: white;
+        font-weight: 800;
+        transition: 0.2s;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: #BF3333;
+        color: rgb(200, 200, 200);
+    }
+    button:active{
+        transform: scale(0.9);
+    }
+    a{
+        position: relative;
+        font-size: 15pt;
+        left: 20px;
+        top: 20px;
+    }
+}
+
+.loader {
+    border: 3px solid rgba(0, 0, 0, 0);
+  border-top: 3px solid white; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }

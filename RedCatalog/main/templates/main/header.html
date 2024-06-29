@@ -11,6 +11,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'main/png/favicon.svg' %}"/>
     <script src="{% static 'main/js/main.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -46,19 +47,22 @@
                     </div2>
                 </div>
             {% else %}
-                <div class="header-sign-in-button">
+                <a class="header-sign-in-button" onclick="login()">
                     <p>Войти</p>
-                </div>
+                </a>
             {% endif %}
         </div>
     </div>
 </header>
 
 
-<div class="content">
+<div class="content" id="content">
     {% block content %}
 
     {% endblock %}
+</div>
+<div class="screen" id="screen" onclick="close_everything()">
+
 </div>
 </body>
 </html>

@@ -8,6 +8,20 @@ Red Catalog - Главная
 {% block content %}
 {% csrf_token %}
 
-<p style="margin-top: 1000px">Hello</p>
+{% if not request.user.is_authenticated %}
+    <div class="login-window" id="login-window">
+        <img class="login-window-background" src="{% static 'main/png/favicon.svg' %}">
+        <h1>Вход в личный кабинет</h1>
+
+            <input placeholder="Электронная почта" type="email" name="mail" id="input-mail">
+            <input placeholder="Пароль" type="password" name="password" id="input-password">
+            <button type="submit" onclick="login1()" id="login-button">Войти</button>
+
+
+        <a href="{% url 'registration' %}">У меня нет аккаунта</a>
+    </div>
+{% endif %}
+
+
 
 {% endblock %}
