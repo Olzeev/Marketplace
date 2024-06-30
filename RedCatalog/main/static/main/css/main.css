@@ -192,14 +192,22 @@ header.scroll {
     transition: 0.2s;
     user-select: none;
 
+
     div1{
         width: 215px;
+
         p{
             text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 200px;
+            left: 7px;
             font-family: 'Open Sans', sans-serif;
             font-size: 15pt;
             bottom: 8px;
             position: relative;
+
         }
     }
     bar{
@@ -298,6 +306,13 @@ header.scroll {
         left: 20px;
         top: 20px;
     }
+    #login-button-error{
+        color: red;
+        position: relative;
+        margin-left: 50px;
+        top: 15px;
+        font-size: 13pt;
+    }
 }
 
 .loader {
@@ -310,6 +325,134 @@ header.scroll {
   animation: spin 1s linear infinite;
 }
 @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.registration-header{
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    left: 20px;
+}
+
+.regis-mail{
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    margin-left:20px;
+    input{
+        width: 300px;
+        height: 30px;
+        border: 1px solid grey;
+        border-radius: 7px;
+        padding-left: 5px;
+        font-size: 12pt;
+        position: relative;
+        margin-left:20px;
+        margin-top: 13px;
     }
+    input:focus{
+        border: 1px solid #FF4545;
+        outline: none;
+    }
+}
+
+.regis-password{
+    display: flex;
+    position: relative;
+    margin-left: 20px;
+
+    font-family: 'Open Sans', sans-serif;
+    input{
+        width: 190px;
+        height: 30px;
+        border: 1px solid grey;
+        border-radius: 7px;
+        padding-left: 5px;
+        font-size: 12pt;
+        position: relative;
+        margin-left: 20px;
+        margin-top: 13px;
+    }
+    input:focus{
+        border: 1px solid #FF4545;
+        outline: none;
+    }
+}
+
+.regis-name{
+    display: flex;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    input{
+        width: 238px;
+        height: 30px;
+        border: 1px solid grey;
+        border-radius: 7px;
+        padding-left: 5px;
+        font-size: 12pt;
+        position: relative;
+        margin-left: 20px;
+        margin-top: 13px;
+    }
+    input:focus{
+        border: 1px solid #FF4545;
+        outline: none;
+    }
+}
+
+.regis-date{
+
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    padding-left: 5px;
+    font-size: 12pt;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
+.regis-date:focus{
+    border: 1px solid #FF4545;
+    outline: none;
+}
+
+.regis-photo{
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 20px;
+    position: relative;
+    input{
+        position: relative;
+        height: 30px;
+        font-size: 11pt;
+        margin-left: 20px;
+        top: 17px;
+    }
+
+}
+
+.regis-button{
+    width: 200px;
+    height: 40px;
+    background-color: #FF4545;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    transition: 0.2s;
+    margin-left: 20px;
+}
+.regis-button:hover{
+    background-color: #BF3333;
+    color: rgb(200, 200, 200);
+}
+.regis-button:active{
+    transform: scale(0.9);
+}
+
+#regis-photo-preview{
+    width: 500px;
+
+}

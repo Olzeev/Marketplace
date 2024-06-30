@@ -32,19 +32,32 @@ function close_everything(){
 function login1(){
     button = document.getElementById('login-button')
     button.innerHTML = '<div class="loader"></div>'
-    setTimeout(function() {
-        $.ajax({
-            url: 'login',
-            type: 'get',
-            data: {
-                mail: document.getElementById('input-mail').value,
-                password: document.getElementById('input-password').value,
-                csrfmiddlewaretoken: '{{ csrf_token }}'
-            },
-            success: function(response){
+
+    $.ajax({
+        url: 'login',
+        type: 'get',
+        data: {
+            mail: document.getElementById('input-mail').value,
+            password: document.getElementById('input-password').value,
+            csrfmiddlewaretoken: '{{ csrf_token }}'
+        },
+        success: function(response){
+            if (response.error == "1"){
+                document.getElementById('login-button-error').innerHTML = "Неверная почта или пароль"
+                button.innerHTML = 'Войти'
+            } else if (response.error == "2"){
+                document.getElementById('login-button-error').innerHTML = "Заполните все поля"
+                button.innerHTML = 'Войти'
+            } else if (response.error == "3"){
+                document.getElementById('login-button-error').innerHTML = "Неверный формат почты"
+                button.innerHTML = 'Войти'
+            }
+            else{
                 location.reload()
             }
-        })
-    }, 3000);
+
+        }
+    })
+
 
 }

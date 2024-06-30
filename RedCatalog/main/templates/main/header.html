@@ -1,7 +1,7 @@
 {% load static %}
 
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -39,7 +39,7 @@
             {% if request.user.is_authenticated %}
                 <div class="header-profile-info">
                     <div1>
-                        <p>Имя Фамилия</p>
+                        <p>{{ request.user.first_name }} {{ request.user.last_name }}</p>
                     </div1>
                     <bar></bar>
                     <div2>
